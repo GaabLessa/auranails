@@ -1,0 +1,437 @@
+/* ===========================
+   RESET BÁSICO
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===========================
+   CORES PRINCIPAIS
+=========================== */
+:root {
+  --roxo: #9b59b6;
+  --roxo-escuro: #6f3f9a;
+  --cinza-claro: #f2f2f2;
+  --cinza-escuro: #333;
+  --branco: #fff;
+}
+
+/* ===========================
+   BODY
+=========================== */
+body {
+  background-color: var(--cinza-claro);
+  color: var(--cinza-escuro);
+  line-height: 1.6;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--roxo);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--branco);
+}
+
+.logo img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ===========================
+   NAVEGAÇÃO
+=========================== */
+nav {
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--branco);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ddd;
+}
+
+/* ===========================
+   HAMBURGER
+=========================== */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--branco);
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+.section {
+  padding: 4rem 2rem;
+}
+
+.section h2 {
+  text-align: center;
+  color: var(--roxo-escuro);
+  margin-bottom: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   IMAGEM SOBRE
+=========================== */
+.sobre-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  margin: 2rem auto 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===========================
+   CARDS DE SERVIÇOS
+=========================== */
+.cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--branco);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.card h3 {
+  color: var(--roxo-escuro);
+  margin-bottom: 0.5rem;
+}
+
+/* ===========================
+   GALERIA
+=========================== */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery img {
+  flex: 1 1 calc(25% - 1rem);
+  max-width: calc(25% - 1rem);
+  min-width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* ===========================
+   FORMULÁRIO
+=========================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--roxo);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--roxo);
+  color: var(--branco);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: var(--roxo-escuro);
+}
+
+/* ===========================
+   WHATSAPP FLUTUANTE
+=========================== */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color:var(--roxo);
+  color: #fff;
+  font-size: 1.8rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+  background-color:var(--roxo-escuro);
+  
+
+}
+
+/* ===========================
+   LIGHTBOX
+=========================== */
+#lightbox {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+/* Tablets / Medium */
+@media screen and (max-width: 992px) {
+  .gallery img {
+    flex: 1 1 calc(33.3% - 1rem);
+    max-width: calc(33.3% - 1rem);
+  }
+}
+
+/* Mobile / Small */
+@media screen and (max-width: 768px) {
+
+/* ===========================
+   HAMBURGER MODERNO
+=========================== */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--branco);
+  z-index: 1100;
+  transition: transform 0.3s ease;
+}
+
+/* MOBILE MENU */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--branco);
+    flex-direction: column;
+    width: 220px; /* largura do menu */
+    transform: translateX(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 1rem 0;
+    border-radius: 0 0 0 10px; /* arredonda só o lado esquerdo */
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    margin-bottom: 1rem;
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  .nav-links li a {
+    color: var(--cinza-escuro);
+    font-weight: 500;
+  }
+
+  /* Ícone hamburguer animado em X */
+  .hamburger.open i {
+    transform: rotate(90deg);
+  }
+}
+}
+/* ===== Footer ===== */
+footer {
+  background: var(--roxo);
+  color: #fff;
+  padding: 60px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f2f2f2;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 15px;
+}
+
+/* ===== Desenvolvedor ===== */
+.footer-section.developer {
+  text-align: center;
+  flex: 1 1 100%;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 15px;
+}
+
+.footer-section.developer p {
+  font-size: 13px;
+  color: #f2f2f2;
+  margin: 0;
+}
+
+.footer-section.developer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-section.developer a:hover {
+  color: #dcd6f7;
+}
+
+/* ===== Responsivo Mobile ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-section {
+    flex: 1 1 100%;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 22px;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+  }
+}

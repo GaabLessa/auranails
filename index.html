@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Nails Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="Imagens/Logo.png" alt="Logo Aura Nails">
+    <span>Aura Nails</span>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<section id="sobre" class="section">
+  <div class="container">
+    <h2>Sobre Aura Nails Studio</h2>
+    <img src="Imagens/unha1.jpg" alt="Imagem do estúdio" class="sobre-img"><br>
+    <p>No <strong>Aura Nails Studio</strong>, oferecemos muito mais que serviços de manicure, proporcionamos cuidado, estilo e bem-estar para cada cliente. Trabalhamos com unhas de gel, alongamento, nail art personalizada e esmaltação de alta qualidade, garantindo resultados duradouros e elegantes.
+    </p>
+    <p>Nosso objetivo é transformar suas unhas em verdadeiras obras de arte, combinando criatividade, sofisticação e atenção aos detalhes. Cada atendimento é feito com carinho, higiene impecável e dedicação, para que você saia do estúdio se sentindo confiante e bonita.</p>
+  </div>
+</section>
+
+<section id="servicos" class="section">
+  <div class="container">
+    <h2>Nossos Serviços</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Manicure</h3>
+        <p>Cuidados completos para unhas naturais.</p>
+      </div>
+      <div class="card">
+        <h3>Unhas de Gel</h3>
+        <p>Alongamento e durabilidade com acabamento impecável.</p>
+      </div>
+      <div class="card">
+        <h3>Nail Art</h3>
+        <p>Design personalizado para cada cliente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="section">
+  <div class="container">
+    <h2>Galeria de Trabalhos</h2>
+    <div class="gallery">
+      <img src="Imagens/mao1.jpg" alt="Trabalho 1" onclick="openLightbox(this)">
+      <img src="Imagens/mao2.jpg" alt="Trabalho 2" onclick="openLightbox(this)">
+      <img src="Imagens/unha1.jpg" alt="Trabalho 3" onclick="openLightbox(this)">
+      <img src="Imagens/unha2.jpg" alt="Trabalho 4" onclick="openLightbox(this)">
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="section">
+  <div class="container">
+    <h2>Entre em Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu e-mail" required>
+      <textarea placeholder="Mensagem" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <!-- Sobre / Contato -->
+    <div class="footer-section">
+      <h3>Contato</h3>
+      <p><i class="fas fa-phone"></i> +55 11 94039-7682</p>
+      <p><i class="fas fa-envelope"></i> contato@auranails@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Embu-guaçu, SP</p>
+    </div>
+
+    <!-- Redes Sociais -->
+    <div class="footer-section">
+      <h3>Siga-nos</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/auraa.nailsstudio?utm_source=ig_web_button_share_sheet&igsh=ODl5Nm15bHJuMHJx" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+        
+      </div>
+    </div>
+
+    <!-- Horário de Atendimento -->
+    <div class="footer-section">
+      <h3>Horário</h3>
+      <p>Ter - Sex: 09:00 - 17:00</p>
+    </div>
+  </div>
+      <!-- Desenvolvedor -->
+<!-- Desenvolvedor -->
+<div class="footer-section developer">
+  <h3>Desenvolvedor</h3>
+  <p>Desenvolvido  por <a href="https://github.com/gaablessa" target="_blank">Gabriel Lessa Nascimento -  Para o PTI  De Web Standarts</a></p>
+</div>
+
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Aura Nails Studio. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511940397682" class="whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Imagem expandida">
+</div>
+
+<script>
+  // Seleciona os elementos
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  // Evento de clique no hambúrguer
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("open"); // abre/fecha menu
+    hamburger.classList.toggle("open"); // anima para X
+  });
+
+  // Função para abrir a lightbox
+  function openLightbox(element) {
+    const src = element.src;
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    lightboxImg.src = src;
+    lightbox.style.display = "flex";
+  }
+
+  // Função para fechar a lightbox
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
